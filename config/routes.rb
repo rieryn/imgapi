@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "/graphql", to: "graphql#execute"
   resources :image_files,only: [:index, :show, :create]
   resources :base64imgs,only: [:index, :show, :create]
   resources :img_items,only: [:index, :show, :create, :update, :destroy]
