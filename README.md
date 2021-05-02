@@ -6,12 +6,12 @@ supports image files and base64 image strings
 
 There's no graphiql because it's api only, suggest using postman or similar
 
-###API 
+### API 
 
 API URL
 local testing: http://localhost:3000/
 
-####GET /image_files/
+#### GET /image_files/
 returns all image files
 
 
@@ -49,8 +49,8 @@ Example API Response
 }
 ```
 
-###GraphQL
-#####Available Queries
+### GraphQL
+##### Available Queries
 ```
 {
   images {
