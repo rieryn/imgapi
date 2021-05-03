@@ -7,5 +7,9 @@ class ImgItemTest < ActiveSupport::TestCase
   test "tests running" do
     assert true
   end
+  test 'valid imgItem' do
+    imgItem = ImgItem.new(img_title: 'tester', img_title: 'test.com',img_user: 'test')
+    assert imgItem.valid?
+  end
   
 end

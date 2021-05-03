@@ -6,6 +6,10 @@ class Base64imgsControllerTest < ActionDispatch::IntegrationTest
     get '/base64imgs'
     assert_response :success
   end
+  test "should create base64imgs" do
+    post '/base64imgs', params: { img_title: "test", img_data:"base64string" }
+    assert_response :success
+  end
 
   # test "the truth" do
   #   assert true
