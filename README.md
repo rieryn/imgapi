@@ -46,7 +46,7 @@ Image links expire after 5 mins, this could be changed depending on usecase
 #### GET /image_files/
 returns all image files
 
-```json
+```graphql
 GET http://localhost:3000/image_files
 
 Example API Response
@@ -73,7 +73,7 @@ Example API Response
 ```
 #### GET /image_files/:image_title
 Get images by title
-```json
+```graphql
 GET http://localhost:3000/image_files/efates
 
 Example API Response
@@ -105,7 +105,7 @@ image_title: String
 image: file
 ```
 
-```json
+```graphql
 POST http://localhost:3000/image_files
 form data
 image_title: String
@@ -125,7 +125,7 @@ Example API Response
 #### POST /image_files/search
 Search for images by image similarity
 
-```json
+```graphql
 POST http://localhost:3000/image_files/search
 form data
 image_title: String
