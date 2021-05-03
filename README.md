@@ -5,6 +5,12 @@ img repo api only server
 supports image files and base64 image strings
 
 There's no graphiql because it's api only, suggest using postman or similar
+### Requirements!
+Ruby 3.0.1
+Imagemagick
+Postgresql 13
+
+will dockerize when I have time
 
 ### API 
 
