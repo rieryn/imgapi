@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_065235) do
 
   create_table "image_files", force: :cascade do |t|
     t.string "image_title"
+    t.string "avg_hash"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
