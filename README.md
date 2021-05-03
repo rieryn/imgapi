@@ -8,30 +8,34 @@ supports image files and base64 image strings
 ##### Thoughts
 trying out graphql and rails, image similarity search because it's interesting to me
 
-image similarity search is based on average hash of each image, within a hamming distance of x
+search is based on average hash of each image, within a hamming distance of x
 
-of course the modern way to do it is feature detection and tagging /phash, would take about 3 weeks
-
-There's no graphiql because it's api only, suggest using postman or similar for queries
-
-rails is very opinionated
+of course the modern way to do it is feature detection and tagging/phash, would take about 3 weeks
 
 ### Requirements!
+```
 Ruby 3.0.1
 Rails 6.1.3.1
 Imagemagick
 Postgresql 13
+```
+will dockerize when imagemagick wants to cooperate
 
-will dockerize when I have no headache, imagemagick isn't cooperative
+There's no graphiql because it's api only, suggest using postman or similar for queries
 
 ##### Running
 ```
 assuming you have all reqs
 
+clone this repo
 bundle install
-db:migrate
-db:seed
+rails db:migrate
+rails db:seed
 rails s
+
+test:
+rails db:migrate RAILS_ENV=test
+rails test
 ```
 Image files aren't seeded, please bring your own
 
@@ -124,7 +128,11 @@ Example API Response
 
 #### POST /image_files/search
 Search for images by image similarity
-
+##### form data
+```
+image_title: String
+image: file
+```
 ```graphql
 POST http://localhost:3000/image_files/search
 form data

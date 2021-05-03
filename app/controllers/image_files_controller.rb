@@ -37,5 +37,12 @@ class ImageFilesController < ApplicationController
             imageFile.as_json.merge({ image: url_for((imageFile.image))})
         }
     end 
+
+    def destroy
+        @imageFiles = ImageFile.all 
+        @imageFiles = ImageFile.find(params[:id])
+        @imageFiles.destroy
+        render json: @imageFiles
+    end 
       
 end

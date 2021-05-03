@@ -1,37 +1,23 @@
 class ImgItemsController < ApplicationController
     def index
-        @secretMenuItems = ImgItem.all 
-        render json: @secretMenuItems
-    end 
-
-    def show
-        @secretMenuItem = ImgItem.find(params[:id])
-        render json: @secretMenuItem
-    end 
-
-    def create
-        @secretMenuItem = ImgItem.create(
-            menu_name: params[:menu_name],
-            restaurant_name: params[:restaurant_name],
-            menu_description: params[:menu_description]
-        )
-        render json: @secretMenuItem
+        @items = ImgItem.all 
+        render json: @items
     end 
 
     def update
-        @secretMenuItem = ImgItem.find(params[:id])
-        @secretMenuItem.update(
-            menu_name: params[:menu_name],
-            restaurant_name: params[:restaurant_name],
-            menu_description: params[:menu_description]
+        @items = ImgItem.find(params[:id])
+        @items.update(
+            img_title: params[:img_title],
+            img_user: params[:img_user],
+            img_description: params[:img_description]
         )
-        render json: @secretMenuItem
+        render json: @items
     end 
 
     def destroy
-        @secretMenuItems = ImgItem.all 
-        @secretMenuItem = ImgItem.find(params[:id])
-        @secretMenuItem.destroy
-        render json: @secretMenuItems
+        @items = ImgItem.all 
+        @items = ImgItem.find(params[:id])
+        @items.destroy
+        render json: @items
     end 
 end

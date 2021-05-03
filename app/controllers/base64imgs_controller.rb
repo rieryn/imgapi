@@ -11,4 +11,10 @@ class Base64imgsController < ApplicationController
         )
         render json: @base64img
     end 
+    def destroy
+        @base64imgs = Base64img.all 
+        @base64imgs = Base64img.find(params[:id])
+        @base64imgs.destroy
+        render json: @base64imgs
+    end 
 end
